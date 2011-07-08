@@ -1,0 +1,18 @@
+<% unless session[:oauth] %>
+  <% form_tag :oauth, method: :get do |f| %>
+    <%= submit_tag '認証する' %>
+  <% end %>
+<% else %>
+<% unless @db_userinfo.nil? then %>
+<%="ようこそ" + @userinfo.name + "さん"%>
+<% end %>
+  <div id="friends_timeline">
+    <dl>
+      <% @tweets.each do |t| %>
+      <dt><%= image_tag t.user.profile_image_url, size: '40x40' %></dt>
+      <dd><%= t.user.name %></dd>
+      <dd><%= t.text %></dd>
+      <% end %>
+    </dl>
+  </div>
+<% end %>

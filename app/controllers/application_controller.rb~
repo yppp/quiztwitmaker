@@ -1,0 +1,12 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+
+  protected
+  def self.consumer
+    OAuth::Consumer::new(
+                         'KKfn2VjN0TeGUefZGbS5A',
+                         '7QZ6aA5XsDKf57PdPsq9AgXAlKmwIu2cOQJtTaE9Y',
+                         {site: "http://twitter.com"}
+                         )
+  end
+end
