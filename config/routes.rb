@@ -3,11 +3,11 @@ Quiztwitmaker::Application.routes.draw do
 
   root to: "index#index", as: :index
 
+  resources :index, only: [:index, :new, :create]
   get "oauth" => "index#oauth", as: :oauth
-
   get "callback" => "index#callback", as: :callback
 
-  resources :quiz, only: ["new", "create"]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

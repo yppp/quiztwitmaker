@@ -5,7 +5,7 @@ class CreateQuizzes < ActiveRecord::Migration
       t.text :text
       t.text :answer
       t.string :picture_path
-      t.references :users_id
+      t.references :user
 
       t.timestamps
     end

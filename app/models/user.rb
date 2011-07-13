@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :quiz
+  has_many :quizzes
 end

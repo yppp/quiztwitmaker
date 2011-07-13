@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protected
   def self.consumer
     OAuth::Consumer::new(
-                         'KKfn2VjN0TeGUefZGbS5A',
-                         '7QZ6aA5XsDKf57PdPsq9AgXAlKmwIu2cOQJtTaE9Y',
+                         'lscJ2SNqqrPT7mNB8dbg',
+                         'YfksAmRe8rlvMOV7sUoAx5rhCABTNuZQ5L60ia5IKk',
                          {site: "http://api.twitter.com"}
                          )
   end

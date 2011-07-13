@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20110706043652) do
     t.text     "text"
     t.text     "answer"
     t.string   "picture_path"
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
