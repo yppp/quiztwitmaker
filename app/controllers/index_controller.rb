@@ -68,7 +68,8 @@ class IndexController < ApplicationController
   end
 
   def new
-    @quiz = Quiz.new
+    return  unless session[:oauth]
+    @quiz = Quiz::new
 
     access_token = OAuth::AccessToken::new(
                                          self.class.consumer,
@@ -82,6 +83,7 @@ class IndexController < ApplicationController
       #pp rubytter.verify_credentials.id_str
       @user_id = User::find_by_twitter_id(rubytter.verify_credentials.id_str.to_i)
 
+
     rescue Rubytter::APIError
       session.delete :oauth
     end
@@ -91,7 +93,7 @@ class IndexController < ApplicationController
   def create
 #    pp params[:quiz]
 
-    @quiz = Quiz.new(params[:quiz])
+    @quiz = Quiz::new params[:quiz]
     @quiz.save
     redirect_to :index
   end
