@@ -1,0 +1,26 @@
+<% if session[:oauth] %>
+
+<%= form_for @quiz, url: {action: 'create'} do |f| %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+</p>
+
+<p>
+<%= f.label :answer %>
+<%= f.text_field :answer %>
+</p>
+
+<%= f.hidden_field :user_id, value: @user_id.id %>
+<p>
+<%= f.submit 'create' %>
+</p>
+
+<% end %>
+
+<% end %>
